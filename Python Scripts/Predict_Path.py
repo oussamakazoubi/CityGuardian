@@ -1,3 +1,29 @@
+from sklearn.ensemble import RandomForestRegressor
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from datetime import datetime
+
+# existing data loading and preprocessing code
+data_chic = pd.read_excel(r'C:\Users\Oussama\Desktop\datachicago\mini chicago.xlsx')  
+data_chic['Date'] = pd.to_datetime(data_chic['Date'])
+data_chic['Hour'] = data_chic['Date'].dt.hour
+data_chic['Minute'] = data_chic['Date'].dt.minute
+data_chic['Second'] = data_chic['Date'].dt.second
+data_chic['Month'] = data_chic['Date'].dt.month
+data_chic['Day'] = data_chic['Date'].dt.day
+data_chic = data_chic.drop(['Date'], axis=1)
+data_chic = data_chic.dropna()
+
+# Split into features and targets
+F = data_chic.drop(['X', 'Y'], axis=1)
+T = data_chic[['X', 'Y']]
+
+# Model training
+F_train, F_test, T_train, T_test = train_test_split(F, T, test_size=0.2, random_state=42)
+model_R = RandomForestRegressor(n_estimators=100)
+model_R.fit(F_train, T_train)
+
+
 def predict_coordinates(hour,minute, day, month) :
     user_input = pd.DataFrame({'Hour': [hour], 'Month': [month], 'Day': [day], 'Minute': [minute]})  # Include minutes in the user input
     prediction = model_R.predict(user_input[['Hour', 'Month', 'Day', 'Minute']])
