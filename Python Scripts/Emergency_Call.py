@@ -3,7 +3,7 @@ import random
 import csv
 from arcgis.gis import GIS
 
-# Connect to your ArcGIS Online account
+# Connection to your ArcGIS Online account
 gis = GIS("https://www.arcgis.com", "oussamasig", "SigGisoussama860")
 
 # Load the shapefile polygon
