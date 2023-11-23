@@ -4,7 +4,7 @@ import csv
 from arcgis.gis import GIS
 
 # Connection to your ArcGIS Online account
-gis = GIS("https://www.arcgis.com", "USERNAME", "PASSWORD)
+gis = GIS("https://www.arcgis.com", "USERNAME", "PASSWORD")
 
 # Load the shapefile polygon
 shapefile_path = r"C:\Users\Oussama\Desktop\datachicago\chicago_Polygone.shp"
