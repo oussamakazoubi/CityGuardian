@@ -32,8 +32,8 @@ def predict_coordinates(hour,minute, day, month) :
 
 
 
-# Initialize your GIS with login credentials
-gis = GIS("https://www.arcgis.com", "oussamasig", "SigGisoussama860")
+# Initialize the GIS with login credentials
+gis = GIS("https://www.arcgis.com", "USERNAME", "PASSWORD")
 
 
 def multiple_predictions(hour,minutes, day, month, nbr) :
