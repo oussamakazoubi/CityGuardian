@@ -8,7 +8,7 @@ from os import remove
 import json
 
 # Connect to your ArcGIS Online account
-gis = GIS("https://www.arcgis.com", "oussamasig", "SigGisoussama860")
+gis = GIS("https://www.arcgis.com", "USERNAME", "PASSWORD")
 
 # Read the Roads shapefile from your local machine
 roads_shapefile_path = r"C:\Users\Oussama\Desktop\datachicago\Chicago_roads.shp"
